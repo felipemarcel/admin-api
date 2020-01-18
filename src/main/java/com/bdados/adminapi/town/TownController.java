@@ -1,4 +1,4 @@
-package com.bdados.adminapi.Town;
+package com.bdados.adminapi.town;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import static io.vavr.API.*;
-import static io.vavr.Predicates.*;
 import static org.springframework.http.ResponseEntity.created;
 import static org.springframework.http.ResponseEntity.ok;
 

@@ -1,4 +1,4 @@
-package com.bdados.adminapi.User;
+package com.bdados.adminapi.user;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

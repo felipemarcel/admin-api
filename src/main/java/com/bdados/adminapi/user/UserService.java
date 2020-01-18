@@ -1,4 +1,4 @@
-package com.bdados.adminapi.User;
+package com.bdados.adminapi.user;
 
 import java.util.ArrayList;
 

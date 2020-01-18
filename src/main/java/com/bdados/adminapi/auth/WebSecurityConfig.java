@@ -1,4 +1,4 @@
-package com.bdados.adminapi.Auth;
+package com.bdados.adminapi.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

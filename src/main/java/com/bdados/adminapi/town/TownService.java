@@ -1,4 +1,4 @@
-package com.bdados.adminapi.Town;
+package com.bdados.adminapi.town;
 
 import io.vavr.control.Option;
 import org.springframework.beans.factory.annotation.Autowired;

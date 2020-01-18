@@ -1,4 +1,4 @@
-package com.bdados.adminapi.Auth;
+package com.bdados.adminapi.auth;
 
 import java.io.IOException;
 import java.io.Serializable;

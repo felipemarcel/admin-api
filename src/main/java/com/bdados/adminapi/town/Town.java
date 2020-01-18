@@ -1,16 +1,15 @@
-package com.bdados.adminapi.Town;
+package com.bdados.adminapi.town;
 
+import com.bdados.adminapi.consumer.models.ConsumerApi;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.util.Objects;
+import java.util.List;
 
-@Getter
-@Setter
+@Data
 @Document(collection = "towns")
 public class Town {
 
@@ -24,6 +23,10 @@ public class Town {
     @JsonProperty(value = "town_urls")
     private TownUrl townUrls;
 
+    @Field(value = "consumer_apis")
+    @JsonProperty(value = "consumer_apis")
+    private List<ConsumerApi> consumerApis;
+
     public Town() {
     }
 
@@ -31,21 +34,6 @@ public class Town {
         this.town = town;
         this.telephone = telephone;
         this.townUrls = townUrlId;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Town town1 = (Town) o;
-        return Objects.equals(id, town1.id) &&
-                Objects.equals(town, town1.town) &&
-                Objects.equals(telephone, town1.telephone);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, town, telephone);
     }
 
     @Override
