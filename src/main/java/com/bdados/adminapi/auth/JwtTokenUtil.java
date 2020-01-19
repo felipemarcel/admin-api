@@ -1,4 +1,4 @@
-package com.bdados.adminapi.Auth;
+package com.bdados.adminapi.auth;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

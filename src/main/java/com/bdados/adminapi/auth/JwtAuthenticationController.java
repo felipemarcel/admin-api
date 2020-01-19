@@ -1,6 +1,6 @@
-package com.bdados.adminapi.Auth;
+package com.bdados.adminapi.auth;
 
-import com.bdados.adminapi.User.UserService;
+import com.bdados.adminapi.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
