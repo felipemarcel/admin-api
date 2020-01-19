@@ -16,8 +16,8 @@ public class TownService {
         return repository.findAll();
     }
 
-    public Town save(Town town) {
-        return repository.insert(town);
+    public Town saveOrUpdate(Town town) {
+        return repository.save(town);
     }
 
     public Option<Town> findBy(String id) {

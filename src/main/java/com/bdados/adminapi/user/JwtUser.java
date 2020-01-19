@@ -5,6 +5,8 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.NotBlank;
+
 import static com.fasterxml.jackson.annotation.JsonProperty.Access.WRITE_ONLY;
 
 @Data
@@ -14,10 +16,14 @@ public class JwtUser {
     @Id
     public String id;
 
+    @NotBlank(message = "Campo 'Nome de usuário' deve ser preenchido.")
     public String userName;
 
+    @NotBlank
     @JsonProperty(access = WRITE_ONLY)
     public String password;
+
+    @NotBlank(message = "Campo email deve ser preenchido")
     public String email;
 
 

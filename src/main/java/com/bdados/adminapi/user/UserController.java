@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -28,13 +29,13 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<?> save(@RequestBody JwtUser jwtUser) throws URISyntaxException {
+    public ResponseEntity<?> save(@Valid @RequestBody JwtUser jwtUser) throws URISyntaxException {
         JwtUser user = service.saveOrUpdate(jwtUser);
         return created(new URI(user.getId())).build();
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable String id, @RequestBody JwtUser jwtUser) throws URISyntaxException {
+    public ResponseEntity<?> update(@PathVariable String id, @Valid @RequestBody JwtUser jwtUser) throws URISyntaxException {
         return ok(service.saveOrUpdate(jwtUser));
     }
 
