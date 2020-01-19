@@ -28,8 +28,8 @@ public class TownController {
         return created(new URI(createdTown.getId())).build();
     }
 
-    @GetMapping(path = "/:id")
-    public ResponseEntity<?> findBy(String id) {
+    @GetMapping(path = "/{id}")
+    public ResponseEntity<?> findBy(@PathVariable String id) {
         Town t = service.findBy(id).getOrElseThrow(RuntimeException::new);
         return ok(t);
     }
