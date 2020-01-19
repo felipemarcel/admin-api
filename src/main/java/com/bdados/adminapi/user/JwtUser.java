@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.validation.constraints.NotBlank;
 
@@ -16,10 +17,12 @@ public class JwtUser {
     @Id
     public String id;
 
+    @Field(value = "username")
+    @JsonProperty(value = "username")
     @NotBlank(message = "Campo 'Nome de usuário' deve ser preenchido.")
     public String userName;
 
-    @NotBlank
+    @NotBlank(message = "Campo senha deve ser preenchido.")
     @JsonProperty(access = WRITE_ONLY)
     public String password;
 
