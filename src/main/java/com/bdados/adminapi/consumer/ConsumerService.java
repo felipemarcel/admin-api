@@ -1,7 +1,7 @@
 package com.bdados.adminapi.consumer;
 
-import com.bdados.adminapi.consumer.models.ConsumerGroup;
-import com.bdados.adminapi.consumer.models.ConsumerType;
+import com.bdados.adminapi.consumer.model.ConsumerGroup;
+import com.bdados.adminapi.consumer.model.ConsumerType;
 import io.vavr.collection.List;
 import org.springframework.stereotype.Service;
 

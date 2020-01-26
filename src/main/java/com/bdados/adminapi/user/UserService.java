@@ -1,6 +1,7 @@
 package com.bdados.adminapi.user;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import io.vavr.control.Option;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,26 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        JwtUser jwtUser = Option.of(repository.findByUserName(username)).getOrElseThrow(() -> {
+        JwtUser jwtUser = Option.of(findBy(username)).getOrElseThrow(() -> {
             throw new UsernameNotFoundException("User not found with username: " + username);
         });
         return new User(jwtUser.userName, jwtUser.password, new ArrayList<>());
+    }
+
+    public JwtUser findBy(String username) {
+        return repository.findByUserName(username);
+    }
+
+    public List<JwtUser> findAll() {
+        return repository.findAll();
+    }
+
+    public JwtUser saveOrUpdate(JwtUser user) {
+        return repository.save(user);
+    }
+
+    public void remove(String id) {
+        repository.deleteById(id);
     }
 
 }

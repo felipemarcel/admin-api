@@ -1,4 +1,4 @@
-package com.bdados.adminapi.consumer.models;
+package com.bdados.adminapi.consumer.model;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
